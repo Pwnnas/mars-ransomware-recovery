@@ -65,7 +65,7 @@ extraction, tar carving).
 2. **Don't wipe the drive.** The `.mars` files *are* the data. Work on copies, and
    keep the encrypted 64 KiB of anything you repair, in case a key ever appears.
 
-Repo: `<LINK>`
+Repo: https://github.com/Pwnnas/mars-ransomware-recovery
 
 If you have `.mars` files sitting on a shelf, the detector costs nothing and might
 turn 0 % into 99 %. And if you find a variant that behaves differently, I'd genuinely
