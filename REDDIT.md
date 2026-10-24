@@ -65,6 +65,19 @@ extraction, tar carving).
 2. **Don't wipe the drive.** The `.mars` files *are* the data. Work on copies, and
    keep the encrypted 64 KiB of anything you repair, in case a key ever appears.
 
+**What's needed, roughly (details in the repo):**
+
+| Format | Smallest file that can yield anything | You need | Outcome |
+|---|---|---|---|
+| Canon CR2 | > 65,537 B (preview must sit past the cut) | nothing — carve the embedded preview | full-size JPEG |
+| Canon MOV | > 65,537 B, practically ~100 KB | nothing — rewrite 40 bytes | complete video |
+| ZIP | > 65,537 B + central directory | nothing, for later entries | most entries |
+| tar / `.bak` | > 65,537 B + one 512-B header | scan for headers | most entries |
+| BMP | > 65,537 B | donor header | pixels recovered |
+| JPEG | — | **exact copy** (a donor header does not resync) | none without a copy |
+| MP4 (index first) | — | key or exact copy | none |
+| anything ≤ 64 KiB | — | exact copy or key | fully overwritten |
+
 Repo: https://github.com/Pwnnas/mars-ransomware-recovery
 
 If you have `.mars` files sitting on a shelf, the detector costs nothing and might

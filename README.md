@@ -75,6 +75,9 @@ deletes.
 
 ## Recovery playbook
 
+**Per-format requirements (minimum size, what survives, what you need) are in
+[RECOVERY_MATRIX.md](RECOVERY_MATRIX.md).**
+
 Working on copies only. Never write to the drive holding the `.mars` files.
 
 1. **Verify the build is truncated** with `mars_truncation_check.py`. If it is not,
@@ -111,6 +114,14 @@ Working on copies only. Never write to the drive holding the `.mars` files.
   brute-force path.
 * The detector's verdicts are heuristics. `truncated-64k` means "plaintext evidence
   found past 65,536", not "every file in the folder is repairable".
+
+## Related files
+
+| file | contents |
+|---|---|
+| [RECOVERY_MATRIX.md](RECOVERY_MATRIX.md) | per-format table: hard floor, practical floor, what survives, what you need, expected outcome |
+| [FINDINGS.md](FINDINGS.md) | full technical write-up and evidence |
+| [OUTREACH.md](OUTREACH.md) | short factual notes for forums / ID-Ransomware |
 
 ## License
 
